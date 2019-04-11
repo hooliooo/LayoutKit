@@ -28,7 +28,7 @@ open class InsetLayout<V: View>: BaseLayout<V>, ConfigurableLayout {
         super.init(alignment: alignment, flexibility: flexibility ?? sublayout.flexibility, viewReuseId: viewReuseId, config: config)
     }
 
-    init(insets: EdgeInsets,
+    public init(insets: EdgeInsets,
          alignment: Alignment = Alignment.fill,
          flexibility: Flexibility? = nil,
          viewReuseId: String? = nil,

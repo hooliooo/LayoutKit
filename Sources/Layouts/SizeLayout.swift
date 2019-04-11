@@ -78,7 +78,7 @@ open class SizeLayout<V: View>: BaseLayout<V>, ConfigurableLayout {
         super.init(alignment: alignment, flexibility: flexibility, viewReuseId: viewReuseId, config: config)
     }
 
-    init(minWidth: CGFloat? = nil,
+    public init(minWidth: CGFloat? = nil,
          maxWidth: CGFloat? = nil,
          minHeight: CGFloat? = nil,
          maxHeight: CGFloat? = nil,

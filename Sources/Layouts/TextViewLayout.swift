@@ -131,7 +131,7 @@ open class TextViewLayout<TextView: UITextView>: BaseLayout<TextView>, Configura
             config: config)
     }
 
-    init(text: Text,
+    public init(text: Text,
          font: UIFont? = nil,
          lineFragmentPadding: CGFloat = 0,
          textContainerInset: UIEdgeInsets = .zero,

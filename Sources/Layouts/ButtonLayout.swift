@@ -46,7 +46,7 @@ open class ButtonLayout<Button: UIButton>: BaseLayout<Button>, ConfigurableLayou
         super.init(alignment: alignment, flexibility: flexibility, viewReuseId: viewReuseId, config: config)
     }
 
-    init(type: ButtonLayoutType,
+    public init(type: ButtonLayoutType,
          title: String,
          image: ButtonLayoutImage = .defaultImage,
          font: UIFont? = nil,

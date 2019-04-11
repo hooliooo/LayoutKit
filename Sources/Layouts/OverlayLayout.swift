@@ -53,7 +53,7 @@ open class OverlayLayout<V: View>: BaseLayout<V> {
         super.init(alignment: alignment, flexibility: flexibility, viewReuseId: viewReuseId, config: config)
     }
 
-    init(primaryLayouts: [Layout],
+    public init(primaryLayouts: [Layout],
          backgroundLayouts: [Layout] = [],
          overlayLayouts: [Layout] = [],
          alignment: Alignment = .fill,

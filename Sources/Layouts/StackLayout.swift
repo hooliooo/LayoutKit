@@ -50,7 +50,7 @@ open class StackLayout<V: View>: BaseLayout<V> {
         super.init(alignment: alignment, flexibility: flexibility, viewReuseId: viewReuseId, config: config)
     }
 
-    init(axis: Axis,
+    public init(axis: Axis,
          spacing: CGFloat = 0,
          distribution: StackLayoutDistribution = .fillFlexing,
          alignment: Alignment = .fill,

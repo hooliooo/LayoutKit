@@ -34,7 +34,7 @@ open class LabelLayout<Label: UILabel>: BaseLayout<Label>, ConfigurableLayout {
         super.init(alignment: alignment, flexibility: flexibility, viewReuseId: viewReuseId, config: config)
     }
 
-    init(attributedString: NSAttributedString,
+    public init(attributedString: NSAttributedString,
          font: UIFont = LabelLayoutDefaults.defaultFont,
          lineHeight: CGFloat? = nil,
          numberOfLines: Int = LabelLayoutDefaults.defaultNumberOfLines,
