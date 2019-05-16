@@ -201,9 +201,9 @@ open class TextViewLayout<TextView: UITextView>: BaseLayout<TextView>, Configura
         textView.textContainerInset = textContainerInset
         textView.textContainer.lineFragmentPadding = lineFragmentPadding
         textView.layoutManager.usesFontLeading = false
-        textView.isScrollEnabled = false
+//        textView.isScrollEnabled = false
         // tvOS doesn't support `isEditable`
-        #if !os(tvOS)
+        #if os(tvOS)
             textView.isEditable = false
         #endif
         textView.font = font
