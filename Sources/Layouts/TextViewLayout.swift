@@ -197,23 +197,22 @@ open class TextViewLayout<TextView: UITextView>: BaseLayout<TextView>, Configura
     // MARK: - overriden methods
 
     open override func configure(view textView: TextView) {
-        super.configure(view: textView)
-        textView.textContainerInset = textContainerInset
-        textView.textContainer.lineFragmentPadding = lineFragmentPadding
-        textView.layoutManager.usesFontLeading = false
-//        textView.isScrollEnabled = false
-        // tvOS doesn't support `isEditable`
-        #if os(tvOS)
-            textView.isEditable = false
-        #endif
-        textView.font = font
-
         switch text {
         case .unattributed(let text):
             textView.text = text
         case .attributed(let attributedText):
             textView.attributedText = attributedText
         }
+
+        super.configure(view: textView)
+        textView.textContainerInset = textContainerInset
+        textView.textContainer.lineFragmentPadding = lineFragmentPadding
+        textView.layoutManager.usesFontLeading = false
+        // tvOS doesn't support `isEditable`
+        #if os(tvOS)
+            textView.isEditable = false
+        #endif
+        textView.font = font
     }
 
     open override var needsView: Bool {
