@@ -8,18 +8,59 @@
 
 import UIKit
 
+/**
+ Layout for a `UILabel`.
+ */
 @objc open class LOKLabelLayout: LOKBaseLayout {
+
+    /**
+     Attributed string to display as the label.
+     */
     @objc public let attributedString: NSAttributedString?
+
+    /**
+     String to display as the label.
+     */
     @objc public let string: String?
+
+    /**
+     Line height for label.
+     */
     @objc public let lineHeight: CGFloat
+
+    /**
+     Font for label.
+     */
     @objc public let font: UIFont
+
+    /**
+     Line break mode for label.
+     */
+    @objc public let lineBreakMode: NSLineBreakMode
+
+    /**
+     Number of lines the label can have.
+     */
     @objc public let numberOfLines: Int
+
+    /**
+     Specifies how this layout is positioned inside its parent layout
+     */
     @objc public let alignment: LOKAlignment
+
+    /**
+     Class object for the created view. Should be a subclass of `UILabel`.
+     */
     @objc public let viewClass: UILabel.Type
+
+    /**
+     Layoutkit configuration block called with created `UIButton`.
+     */
     @objc public let configure: ((UILabel) -> Void)?
 
     @objc public init(attributedString: NSAttributedString,
                       font: UIFont?,
+                      lineBreakMode: NSLineBreakMode,
                       lineHeight: CGFloat,
                       numberOfLines: Int,
                       alignment: LOKAlignment?,
@@ -29,6 +70,7 @@ import UIKit
                       configure: ((UILabel) -> Void)?) {
         self.attributedString = attributedString
         self.font = font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        self.lineBreakMode = lineBreakMode
         self.lineHeight = lineHeight
         self.numberOfLines = numberOfLines
         self.alignment = alignment ?? .topLeading
@@ -40,6 +82,7 @@ import UIKit
             font: self.font,
             lineHeight: lineHeight > 0 && lineHeight.isFinite ? lineHeight : Optional<CGFloat>.none,
             numberOfLines: self.numberOfLines,
+            lineBreakMode: self.lineBreakMode,
             alignment: self.alignment.alignment,
             flexibility: flexibility?.flexibility ?? .flexible,
             viewReuseId: viewReuseId,
@@ -51,6 +94,7 @@ import UIKit
 
     @objc public init(string: String,
                       font: UIFont?,
+                      lineBreakMode: NSLineBreakMode,
                       lineHeight: CGFloat,
                       numberOfLines: Int,
                       alignment: LOKAlignment?,
@@ -60,6 +104,7 @@ import UIKit
                       configure: ((UILabel) -> Void)?) {
         self.string = string
         self.font = font ?? UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        self.lineBreakMode = lineBreakMode
         self.lineHeight = lineHeight
         self.numberOfLines = numberOfLines
         self.alignment = alignment ?? .topLeading
@@ -71,6 +116,7 @@ import UIKit
             font: self.font,
             lineHeight: lineHeight > 0 && lineHeight.isFinite ? lineHeight : Optional<CGFloat>.none,
             numberOfLines: self.numberOfLines,
+            lineBreakMode: self.lineBreakMode,
             alignment: self.alignment.alignment,
             flexibility: flexibility?.flexibility ?? .flexible,
             viewReuseId: viewReuseId,
